@@ -1,0 +1,6 @@
+Marina Junqueira RA:819221646
+Giovanna Galvão RA:819115610
+
+
+Obs: Gionanna está com um computador que emprestado da faculade São Judas e por conta disso ela nao conseguiu instar o git
+para poder mnadar as partes que ela fez, por isso somento aparece que eu, Marina, estou postandos os codigos 
