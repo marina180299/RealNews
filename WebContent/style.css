@@ -13,6 +13,7 @@ hr {
 	color: #000;
 	background-color: #000;
 	border-width: 0;
+	clear: both;
 }
 
 h1 {
@@ -26,7 +27,7 @@ h2 {
 	color: #696969;
 }
 
-h3 {
+h3, a {
 	font-size: 16px;
 	color: #696969;
 }
@@ -38,6 +39,15 @@ ol {
 p {
 	margin: 0;
 	padding: 0;
+}
+
+a {
+	font-size: 22px;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #000000;
 }
 
 input[type=text], textarea {
@@ -74,6 +84,11 @@ input[type=text], textarea {
 	padding: 3px 20px;
 }
 
+.list-item p {
+	margin-top: 5px!important;
+	margin-bottom: 10px!important;
+}
+
 .content {
 	width: 50%;
 	display: block;
@@ -92,9 +107,27 @@ input[type=text], textarea {
 	color: #ff80c0;
 }
 
+.col-11 {
+	float: left;
+	width: 11%;
+	margin-top: 6px;
+}
+
 .col-16 {
 	float: left;
 	width: 16%;
+	margin-top: 6px;
+}
+
+.col-20 {
+	float: left;
+	width: 20%;
+	margin-top: 6px;
+}
+
+.col-80 {
+	float: left;
+	width: 80%;
 	margin-top: 6px;
 }
 
@@ -104,8 +137,33 @@ input[type=text], textarea {
 	margin-top: 6px;
 }
 
+.col-89 {
+	float: left;
+	width: 89%;
+	margin-top: 6px;
+}
+
 .row:after {
 	content: "";
 	display: table;
 	clear: both;
+}
+
+.btn {
+	border: none;
+	display: inline-block;
+	padding: 8px 16px;
+	vertical-align: middle;
+	overflow: hidden;
+	text-align: center;
+	cursor: pointer;
+	white-space: nowrap;
+	color: #FFFFFF;
+	background-color: #ff80c0;
+	font-size: 18px;
+}
+
+.btn:hover {
+	background-color: #ff48a4;
+	color: #FFFFFF;
 }

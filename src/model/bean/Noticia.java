@@ -1,4 +1,4 @@
-package model;
+package model.bean;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -7,33 +7,24 @@ import java.util.List;
 public class Noticia implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
-	private static final long UNDEFINED_ID = -1L;
 	
-	private Long id;
+	public static final int ID_DESCONHECIDO = -1;
+	
+	private int id;
 	private String titulo;
 	private String descricao;
 	private String texto;
 	
-	private List<Comentario> comentarios; // Should go here?
+	private List<Comentario> comentarios;
 	
-	public Noticia() {
-		this("", "", "");
-	}
+	public Noticia() {}
 	
-	public Noticia(String titulo, String descricao, String texto) {
-		this(UNDEFINED_ID, titulo, descricao, texto);
-	}
-	
-	public Noticia(Long id, String titulo, String descricao, String texto) {
-		this.id = id;
-		this.titulo = titulo;
-		this.descricao = descricao;
-		this.texto = texto;
-		this.comentarios = new ArrayList<>();
-	}
-	
-	public Long getId() {
+	public int getId() {
 		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getTitulo() {

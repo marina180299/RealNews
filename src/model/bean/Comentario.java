@@ -1,32 +1,25 @@
-package model;
+package model.bean;
 
 import java.io.Serializable;
 
 public class Comentario implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
-	private static final long UNDEFINED_ID = -1L;
 	
-	private Long id;
+	public static final int ID_DESCONHECIDO = -1;
+	
+	private int id;
 	private String nome;
 	private String texto;
 	
-	public Comentario() {
-		this("", "");
-	}
+	public Comentario() {}
 	
-	public Comentario(String nome, String texto) {
-		this(UNDEFINED_ID, nome, texto);
-	}
-	
-	public Comentario(Long id, String nome, String texto) {
-		this.id = id;
-		this.nome = nome;
-		this.texto = texto;
-	}
-	
-	public Long getId() {
+	public int getId() {
 		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getNome() {

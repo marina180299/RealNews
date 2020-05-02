@@ -1,4 +1,4 @@
-package view;
+package view.manager;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -19,8 +19,8 @@ import model.bean.Noticia;
 import model.dao.NoticiasDAO;
 import model.dao.NoticiasDAOImpl;
 
-@WebServlet(name = "/NoticiasServlet", urlPatterns = { "/noticias" })
-public class NoticiasServlet extends HttpServlet {
+@WebServlet(name = "/NoticiasGerenciadorServlet", urlPatterns = { "/manager/noticias" })
+public class NoticiasGerenciadorServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
 
@@ -42,8 +42,7 @@ public class NoticiasServlet extends HttpServlet {
 		}
 		
 		// Gera o html
-		String titulo = Config.PAGE_TITLE + " - Notícias";
-		String html = generateHtml(titulo, noticias);
+		String html = generateHtml(Config.MANAGER_PAGE_TITLE, noticias);
 		
 		// "Escreve" o html na tela
 		PrintWriter writer = response.getWriter();
@@ -57,26 +56,32 @@ public class NoticiasServlet extends HttpServlet {
 				"	<head>\n" + 
 				"		<meta charset=\"ISO-8859-1\">\n" + 
 				"		<title>" + titulo + "</title>\n" + 
-				"		<link href=\"style.css\" rel=\"stylesheet\" type=\"text/css\">\n" + 
+				"		<link href=\"../style.css\" rel=\"stylesheet\" type=\"text/css\">\n" + 
 				"	</head>\n" + 
 				"	<body>\n" + 
 				"		<h1>RealNews</h1>\n" + 
 				"		<hr>\n" + 
-				"		<ol>\n";
+				"		<ol>\n" +
+				"		<a class=\"btn\" href=\"noticias/nova\">Criar notícia</a>\n";
 		
 		for (Noticia noticia : noticias) {
 			html += "			<li class=\"list-item\">\n" +
 					"				<div class=\"row content\">\n" +
-					"					<a href=\"noticia?id=" + noticia.getId() + "\">" + noticia.getTitulo() + "</a>\n" +
-					"					<br>\n" +
-					"					<p>" + noticia.getDescricao() + "</p>\n" +
+					"					<div class=\"col-80\">\n" +
+					"						<a href=\"../noticia?id=" + noticia.getId() + "\">" + noticia.getTitulo() + "</a>\n" +
+					"						<br>\n" +
+					"						<p>" + noticia.getDescricao() + "</p>\n" +
+					"					</div>\n" +
+					"					<div class=\"col-20\">\n" +
+					"						<a class=\"btn\" href=\"noticias/alterar?id=" + noticia.getId() + "\">Editar</a>\n" +
+					"						<a class=\"btn\" href=\"noticias/excluir?id=" + noticia.getId() + "\">Excluir</a>\n" +
+					"					</div>\n" +
 					"					<hr class=\"comment-separator\">\n" +
 					"				</div>\n" +
-					"			</li>\n";
+					"			</li>\n"; 
 		}
 		
-		html += 
-				"		</ol>\n" + 
+		html += "		</ol>\n" + 
 				"	</body>\n" + 
 				"</html>";
 		
