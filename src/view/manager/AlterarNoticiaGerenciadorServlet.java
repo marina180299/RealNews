@@ -66,7 +66,7 @@ public class AlterarNoticiaGerenciadorServlet extends HttpServlet {
 		String descricao = request.getParameter("descricao");
 		String texto = request.getParameter("texto");
 
-		// Se os campos não estiverem vazios ou apenas com espaços em branco
+		// Se os campos nÃ£o estiverem vazios ou apenas com espaÃ§os em branco
 		if (!titulo.isBlank() && !descricao.isBlank() && !texto.isBlank()) {
 			
 			// Cria um bean com os dados
@@ -79,7 +79,7 @@ public class AlterarNoticiaGerenciadorServlet extends HttpServlet {
 			// Conecta com o banco
 			Connection conn = ConnectionFactory.getConnection();
 			try {
-				// Atualiza a notícia no banco
+				// Atualiza a notÃ­cia no banco
 				NoticiasDAO dao = new NoticiasDAOImpl(conn);
 				dao.update(noticia);
 			} catch (SQLException ex) {
@@ -89,7 +89,7 @@ public class AlterarNoticiaGerenciadorServlet extends HttpServlet {
 			}
 		}
 		
-		// Redireciona para a página inicial do gerenciador
+		// Redireciona para a pÃ¡gina inicial do gerenciador
 		response.sendRedirect(request.getContextPath() + "/manager/noticias");
 	}
 
@@ -108,22 +108,22 @@ public class AlterarNoticiaGerenciadorServlet extends HttpServlet {
 				"			<hr>\n" + 
 				"		</div>\n" + 
 				"		<div class=\"content\">\n" +
-				"			<h2>Nova notícia:</h2>\n" + 
+				"			<h2>Alterar notÃ­cia:</h2>\n" + 
 				"			<form method=\"post\" action=\"alterar\">\n" + 
 				"				<div class=\"row\">\n" + 
 				"					<div class=\"col-11\">\n" + 
-				"						<label class=\"comment-field-lbl\" for=\"titulo\">Título:</label>\n" + 
+				"						<label class=\"comment-field-lbl\" for=\"titulo\">TÃ­tulo:</label>\n" + 
 				"					</div>\n" + 
 				"					<div class=\"col-89\">\n" + 
-				"						<input name=\"titulo\" type=\"text\" placeholder=\"Digite o título da notícia..\" value=\"" + noticia.getTitulo() + "\" />\n" + 
+				"						<input name=\"titulo\" type=\"text\" placeholder=\"Digite o tÃ­tulo da notÃ­cia..\" value=\"" + noticia.getTitulo() + "\" />\n" + 
 				"					</div>\n" + 
 				"				</div>\n" + 
 				"				<div class=\"row\">\n" + 
 				"					<div class=\"col-11\">\n" + 
-				"						<label class=\"comment-field-lbl\" for=\"descricao\">Descrição:</label>\n" + 
+				"						<label class=\"comment-field-lbl\" for=\"descricao\">DescriÃ§Ã£o:</label>\n" + 
 				"					</div>\n" + 
 				"					<div class=\"col-89\">\n" + 
-				"						<textarea name=\"descricao\" placeholder=\"Descreva a notícia em poucas palavras..\" style=\"height: 60px\">" + noticia.getDescricao() + "</textarea>\n" + 
+				"						<textarea name=\"descricao\" placeholder=\"Descreva a notÃ­cia em poucas palavras..\" style=\"height: 60px\">" + noticia.getDescricao() + "</textarea>\n" + 
 				"					</div>\n" + 
 				"				</div>\n" +
 				"				<div class=\"row\">\n" + 
@@ -131,7 +131,7 @@ public class AlterarNoticiaGerenciadorServlet extends HttpServlet {
 				"						<label class=\"comment-field-lbl\" for=\"texto\">Texto:</label>\n" + 
 				"					</div>\n" + 
 				"					<div class=\"col-89\">\n" + 
-				"						<textarea name=\"texto\" placeholder=\"Aqui vai o texto da notícia!\" style=\"height: 600px\">" + noticia.getTexto() + "</textarea>\n" + 
+				"						<textarea name=\"texto\" placeholder=\"Aqui vai o texto da notÃ­cia!\" style=\"height: 600px\">" + noticia.getTexto() + "</textarea>\n" + 
 				"					</div>\n" + 
 				"				</div>\n" +
 				"				<div class=\"row\">\n" + 
@@ -143,7 +143,7 @@ public class AlterarNoticiaGerenciadorServlet extends HttpServlet {
 				"			</form>\n" + 
 				"		</div>\n" + 
 				"		<div class=\"footer\">\n" + 
-				"			<p>Copyright © 2020 - RealNews</p>\n" + 
+				"			<p>Copyright Â© 2020 - RealNews</p>\n" + 
 				"		</div>\n" +
 				"	</body>\n" + 
 				"</html>";
